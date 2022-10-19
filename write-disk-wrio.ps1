@@ -1,6 +1,6 @@
 #Powered by kimakrus, kimkarus.ru, info@kimkarus.ru
 clear
-#Get-Counter -ListSet * | Where-Object CounterSetName -eq "Логический диск" | Select -ExpandProperty Paths
+#Get-Counter -ListSet * | Where-Object CounterSetName -eq "Р›РѕРіРёС‡РµСЃРєРёР№ РґРёСЃРє" | Select -ExpandProperty Paths
 function getDiskCurrentSpeed([string]$str_disk_performance) {
        
     $disk_speed = ((((get-counter -counter $str_disk_performance -ea 0).countersamples) | select cookedvalue).cookedvalue)/1024/1024
@@ -8,9 +8,9 @@ function getDiskCurrentSpeed([string]$str_disk_performance) {
     return $disk_speed
 }
 function getCounterString([string]$disk,[string]$counter_type){
-    $str_disk_performance_io = "\Логический диск("+$disk+":)\Скорость обмена с диском (байт/с)"
-    $str_disk_performance_read = "\Логический диск("+$disk+":)\Скорость чтения с диска (байт/с)"
-    $str_disk_performance_write = "\Логический диск("+$disk+":)\Скорость записи на диск (байт/с)"
+    $str_disk_performance_io = "\Р›РѕРіРёС‡РµСЃРєРёР№ РґРёСЃРє("+$disk+":)\РЎРєРѕСЂРѕСЃС‚СЊ РѕР±РјРµРЅР° СЃ РґРёСЃРєРѕРј (Р±Р°Р№С‚/СЃ)"
+    $str_disk_performance_read = "\Р›РѕРіРёС‡РµСЃРєРёР№ РґРёСЃРє("+$disk+":)\РЎРєРѕСЂРѕСЃС‚СЊ С‡С‚РµРЅРёСЏ СЃ РґРёСЃРєР° (Р±Р°Р№С‚/СЃ)"
+    $str_disk_performance_write = "\Р›РѕРіРёС‡РµСЃРєРёР№ РґРёСЃРє("+$disk+":)\РЎРєРѕСЂРѕСЃС‚СЊ Р·Р°РїРёСЃРё РЅР° РґРёСЃРє (Р±Р°Р№С‚/СЃ)"
 
     $str_disk_performance = $str_disk_performance_write
 
