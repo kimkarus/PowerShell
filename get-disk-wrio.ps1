@@ -1,6 +1,6 @@
 #Powered by kimakrus, kimkarus.ru, info@kimkarus.ru
 clear
-#Get-Counter -ListSet * | Where-Object CounterSetName -eq "Логический диск" | Select -ExpandProperty Paths
+#Get-Counter -ListSet * | Where-Object CounterSetName -eq "Р›РѕРіРёС‡РµСЃРєРёР№ РґРёСЃРє" | Select -ExpandProperty Paths
 function getContentByPath([string]$path) {
 
     $content = Get-Content -Path $PSScriptRoot\$path -TotalCount 1
